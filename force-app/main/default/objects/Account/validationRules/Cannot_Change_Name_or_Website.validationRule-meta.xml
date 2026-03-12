@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Name_or_Website</fullName>
+    <active>true</active>
+    <description>Block unauthorized changes to the Account&apos;s Name or Website</description>
+    <errorConditionFormula>AND(
+    $Profile.Name != &apos;System Administrator&apos;,
+    OR(
+      ISCHANGED( Name ),
+      ISCHANGED( Website )
+    )
+)</errorConditionFormula>
+    <errorMessage>You cannot change this information on an account.</errorMessage>
+</ValidationRule>
