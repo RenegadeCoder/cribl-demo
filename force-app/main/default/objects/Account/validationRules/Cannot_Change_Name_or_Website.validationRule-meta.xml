@@ -4,7 +4,7 @@
     <active>true</active>
     <description>Block unauthorized changes to the Account&apos;s Name or Website</description>
     <errorConditionFormula>AND(
-    $Profile.Name != &apos;System Administrator&apos;,
+    $Profile.Name != &apos;System Administrator&apos;, 
     OR(
       ISCHANGED( Name ),
       ISCHANGED( Website )

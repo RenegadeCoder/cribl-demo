@@ -19,7 +19,7 @@ private class ContactTriggerHandlerTests {
         };
         insert cons;
 
-        // Arrange: create a non-admin user
+        // Arrange: create an admin user
         Profile p = [SELECT Id, Name FROM Profile WHERE Name = 'System Administrator' LIMIT 1];
         User u = new User(
             Alias = 'admin',
